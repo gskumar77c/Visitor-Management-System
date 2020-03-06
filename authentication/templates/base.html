@@ -1,0 +1,35 @@
+{% load static %}
+
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title></title>
+    </head>
+    <body>
+ 
+
+    {% block content %}
+  
+
+    {% endblock content %}
+    <div class="row ">
+         <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}"> {{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        </div>
+    </div>
+    </body>
+</html>
+
+
+
