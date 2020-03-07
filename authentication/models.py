@@ -71,3 +71,29 @@ class Profile(models.Model):
 			print(self.image.path)
 			img.thumbnail(output_size)
 			img.save(self.image.path)
+
+
+
+class CheckInOut(models.Model):
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+	checkin_time = models.DateTimeField()
+	checkout_time = models.DateTimeField(null=True,blank=True)
+	checked = models.BooleanField(default=False)
+
+	def __str__(self):
+		s1 = str(self.checkin_time)
+		s1 = s1.split()
+		in_date = s1[0]
+		in_time = s1[1].split('.')[0]
+		out_date = '-'
+		out_time = '-'
+		if self.checkout_time!=None:
+			s2 = str(self.checkout_time)
+			s2 = s2.split()
+			out_date = s2[0]
+			out_time = s2[1].split('.')[0]
+		s = "userid : " + self.user.email + " | checkin date: "+ in_date + "  |  checkin time: "+in_time+"  |  checkout date: "+out_date + "  |  checkout time: "+out_time
+		return s
+
+	def is_checked(self):
+		return self.checked

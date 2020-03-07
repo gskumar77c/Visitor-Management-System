@@ -7,7 +7,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 class UserCreationForm(forms.ModelForm):
 
 	password1 = forms.CharField(label='password',widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Password *"}))
-	password2 = forms.CharField(label='confirm password',widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Password *"}))
+	password2 = forms.CharField(label='confirm password',widget=forms.PasswordInput(attrs={"class":"form-control","placeholder":"Conform Password *"}))
 	email  = forms.CharField(max_length=255,widget = forms.EmailInput(attrs={"class":"form-control","placeholder":"Email *"}))
 	fullname = forms.CharField(max_length=200,widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Full Name *"}))
 
@@ -52,6 +52,7 @@ class UserUpdateForm(forms.ModelForm):
 		fields = ['fullname']
 
 class ProfileUpdateForm(forms.ModelForm):
+	dob = forms.DateField(widget=forms.DateInput(attrs={"placeholder":"YYYY-MM-DD"}))
 	class Meta:
 		model = Profile
 		fields = ['dob','address','image']

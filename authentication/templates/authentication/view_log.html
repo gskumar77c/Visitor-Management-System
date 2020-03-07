@@ -1,0 +1,15 @@
+{% extends "authentication/base2.html" %}
+{% block content %}
+<div class="content-section">
+  <div class="media">
+    <div class="media-body">
+    	<h4>CheckIn - CheckOut Information</h4>
+    	<ul>
+    	{% for msg in q %}
+    		<li>{{msg}}</li>
+    	{% endfor %}
+    	</ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}

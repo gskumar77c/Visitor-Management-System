@@ -10,6 +10,9 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(template_name='authentication/logout.html'),name='logout'),
     path('register/',views.register,name='register'),
     path('profile/',views.profile,name='profile'),
+    path('checkin_email/',views.checkin_email,name='checkin-email'),
+    path('checkout_email/',views.checkout_email,name='checkout-email'),
+    path('viewlog/',views.view_log,name='log')
     
 ]
 

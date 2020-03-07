@@ -50,7 +50,8 @@
     color: #f8f9fa;
 }
 .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    /*background: -webkit-linear-gradient(left, #3931af, #00c6ff);*/
+    background: -webkit-linear-gradient(left, #052b02, #22f711);
     margin-top: 3%;
     padding: 3%;
     border-radius: 2.5rem;
@@ -63,8 +64,7 @@
 }
 
 body {
-    background-image: url('iitrpr.jpg');
-    background-blend-mode: luminosity;
+    background-image: url('img.jpg');
 }
 
 .form-group{

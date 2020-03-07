@@ -1,7 +1,18 @@
 {% extends "authentication/base2.html" %}
 {% block content %}
-	<h1>This is raavan</h1>
+	<h1>Welcome to the Visitor Management System</h1>
+	<br><br>
+	<h4>This system sends an email to the vistor about his checkin and checkout. </h4>
 	<br>
-	<button>checkin</button>
+	<div class="row">
+		{% if check %}
+			   <div class="col-md-4"><a href="{% url 'checkout-email' %}" class="btn btn-danger btn-lg">Check out</a></div>
+		{% else %}	  
+			   <div class="col-md-4"><a href="{% url 'checkin-email' %}" class="btn btn-success btn-lg">Check in</a></div>
+		{% endif %}
+				<div class="col-md-4"><a href="{% url 'profile' %}" class="btn btn-primary btn-lg">Profile</a></div>
+				<div class="col-md-4"><a href="{% url 'log' %}" class="btn btn-warning btn-lg">View Log</a></div>
+	</div>
+
 	
 {% endblock content %}
