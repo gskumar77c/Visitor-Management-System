@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser,AbstractBaseUser,BaseUserManager
 from django.conf import settings
-
+from PIL import Image
 
 class UserManager(BaseUserManager):
 
@@ -52,7 +52,22 @@ class User(AbstractBaseUser):
 		return self.is_admin
 
 
-class UserInformation(models.Model):
+class Profile(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-	address = models.CharField(max_length=200)
-	dob = models.DateField()
+	address = models.CharField(max_length=200,blank=True,null=True)
+	dob = models.DateField(blank=True,null=True)
+	image = models.ImageField(default='deafult.jpg',upload_to='profile_pics')
+
+
+	def __str__(self):
+		return f'{self.user.fullname} Profile'
+
+
+	def save(self):
+		super().save()
+		img = Image.open(self.image.path)
+		if img.height >300 or img.width>300 :
+			output_size = (300,300)
+			print(self.image.path)
+			img.thumbnail(output_size)
+			img.save(self.image.path)
