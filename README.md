@@ -1,6 +1,23 @@
 "# Visitor-Management-System" 
 
-Manages the check in and check out information of the visitors. Sends mail to the visitor's about their checkin and checkout details.
+Manages the check in and check out information of the visitors. 
+
+Manager(admin):
+
+-> Can see all visitors checkin and checkout details
+
+-> Can remove access to any visitor
+
+Visitor(user):
+
+-> Creates an account in the system
+
+-> Can update his/her profile
+
+-> Can view his all Checkin/Checkout information
+
+-> Recieves mails related to his Checkin/Checkout
+
 
 To Run The code :
 
