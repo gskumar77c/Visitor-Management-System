@@ -1,14 +1,14 @@
-"# Visitor-Management-System" 
+# Visitor-Management-System
 
 Manages the check in and check out information of the visitors. 
 
-Manager(admin):
+# Manager(admin):
 
 -> Can see all visitors checkin and checkout details
 
 -> Can remove access to any visitor
 
-Visitor(user):
+# Visitor(user):
 
 -> Creates an account in the system
 
@@ -19,7 +19,7 @@ Visitor(user):
 -> Recieves mails related to his Checkin/Checkout
 
 
-To Run The code :
+# To Run The code :
 
 Change the settings in settings.py:
 
