@@ -27,7 +27,7 @@ EMAIL_HOST_USER = 'abc@gmail.com'  # 'your email address'
 
 EMAIL_HOST_PASSWORD = 'abcpassword'  # 'your email password'
 
-for the first time:
+To set up the database:
 
 python manage.py makemigrations
 
